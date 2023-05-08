@@ -11,8 +11,8 @@ In order to do that is necessary to use Django to manage the backend of the appl
 # Django
 ## Setup
 In addition to the normal installation, Django needs two dependencies to create a Rest Api:
-- the toolkit ==Django REST Framework==
-- ==django-cors-headers== to handle server headers required for Cross-Origin Resource Sharing
+- the toolkit <mark>Django REST Framework</mark>
+- <mark>django-cors-headers</mark> to handle server headers required for Cross-Origin Resource Sharing
 These two dependencies will help comunicating with React app in case, in general these are useful with applications which try to access the API.
 
 Both these dependencies must be added as an installed app into django settings.py as "corsheaders" and "rest_framework" and a middleware, for use a filter to apply CORS logic to application's requests, must be added as "corsheaders.middleware.CorsMiddleware"
@@ -64,11 +64,11 @@ return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 Now is possible to test the API by simply requesting the urls from the browser, where Django will render an human-friendly HTML output for easy browsing into the API.
 
 ## React
-After creating a new react app, alongside the Django's one, is possible to create the style of the page. How the page is styled is not importat as it is completly arbitrary. But, React needs a way to interact with the API, and to do that it can use ==Axios==.
+After creating a new react app, alongside the Django's one, is possible to create the style of the page. How the page is styled is not importat as it is completly arbitrary. But, React needs a way to interact with the API, and to do that it can use <mark>Axios</mark>.
 
-==Axios== is a promise-based HTTP client and can be installed as dependencies using `npm install axios`.
+<mark>Axios</mark> is a promise-based HTTP client and can be installed as dependencies using `npm install axios`.
 
-Another useful thing is create a ==constants== folder in which store a file with constants. In this case just add the base URL to the API, to avoid writing it into the React code, by simply creating an ==index.js== file and adding the constant `export const API_URL = "http://localhost:8000/api/test"`[^1]
+Another useful thing is create a <mark>constants</mark> folder in which store a file with constants. In this case just add the base URL to the API, to avoid writing it into the React code, by simply creating an <mark>index.js</mark> file and adding the constant `export const API_URL = "http://localhost:8000/api/test"`[^1]
 
 [^1]: Note that this is only a placeholder to connect the React app to an api running in local for developing.
 
