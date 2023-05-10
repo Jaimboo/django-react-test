@@ -16,7 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from social import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/posts', views.posts_list),
+    path('api/posts/<int:id>', views.post_detail)
 ]

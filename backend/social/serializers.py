@@ -1,8 +1,12 @@
 from rest_framework import serializers
-from models import Post
+from social.models import Post, User
 
 class PostSerializer(serializers.ModelSerializer):
-
+    prova = serializers.PrimaryKeyRelatedField(
+        default = serializers.CurrentUserDefault(),
+        queryset = User.objects.all(),
+    )
+    
     class Meta:
         model = Post
-        fields = ('user', 'content', 'date', 'like')
+        fields = ('id', 'prova', 'content', 'created')
